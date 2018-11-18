@@ -99,3 +99,29 @@ describe('/GET parcelDetail', () => {
 	});
 
 });
+
+describe('/GET userParcels', () => {
+	it('It should return parcels of a specific user', (done) => {
+		
+
+		chai.request(app)
+		.get('/api/v1/users/1/parcels/')
+		
+		.end((err, res) => {
+			res.should.have.status(200);
+			expect(res.body.length).to.equal(2);
+
+			// check for user id 200
+			chai.request(app)
+			.get('/api/v1/users/200000/parcels/')
+			.end((err, res) =>{
+				res.should.have.status(200);
+				expect(res.body.length).to.equal(0);
+			})
+
+			done();
+		});
+
+	});
+
+});
