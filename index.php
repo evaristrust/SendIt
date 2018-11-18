@@ -1,4 +1,4 @@
 <?php
-header('Location:ui/index.html');
+header('Location:UI/index.html');
 die();
 ?>
