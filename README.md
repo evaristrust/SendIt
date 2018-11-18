@@ -2,8 +2,9 @@
 Andela Kigali bootcamp challenges 
 
 # Heroku Application
+UI: <a href="https://andela-challenge.herokuapp.com/UI/">https://andela-challenge.herokuapp.com/UI/</a>
 
-<a href="https://andella-challenge-2.herokuapp.com/" target="_blank">https://andella-challenge-2.herokuapp.com/</a>
+APIs: <a href="https://andella-challenge-2.herokuapp.com/" target="_blank">https://andella-challenge-2.herokuapp.com/</a>
 
 # End Points
 
