@@ -1,10 +1,10 @@
-var express = require("express");
+const express = require("express");
 
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 
-var path = require('path');
+const path = require('path');
 
-var app = express();
+const app = express();
 
 const port = process.env.PORT || 8000;
 
