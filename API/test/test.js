@@ -49,3 +49,27 @@ describe('/GET parcels', () => {
 	});
 
 });
+//testing for cancel the parcel 
+describe('/PUT cancelParcel', () => {
+	it('It should cancel an incomplete parcel', (done) => {
+		
+
+		chai.request(app)
+		.put('/api/v1/parcels/1/cancel')
+		
+		.end((err, res) => {
+			res.should.have.status(400);
+
+			// check for parcel id 2
+			chai.request(app)
+			.put('/api/v1/parcels/2/cancel')
+			.end((err, res) =>{
+				res.should.have.status(200);
+			})
+
+			done();
+		});
+
+	});
+
+});
