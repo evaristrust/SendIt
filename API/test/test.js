@@ -73,3 +73,29 @@ describe('/PUT cancelParcel', () => {
 	});
 
 });
+
+describe('/GET parcelDetail', () => {
+	it('It should return detail of a parcel', (done) => {
+		
+
+		chai.request(app)
+		.get('/api/v1/parcels/1/')
+		
+		.end((err, res) => {
+			res.should.have.status(200);
+			expect(res.body.length).to.equal(1);
+
+			// check for parcel id 2
+			chai.request(app)
+			.get('/api/v1/parcels/3000')
+			.end((err, res) =>{
+				res.should.have.status(200);
+				expect(res.body.length).to.equal(0);
+			})
+
+			done();
+		});
+
+	});
+
+});
