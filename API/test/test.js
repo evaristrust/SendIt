@@ -26,3 +26,26 @@ describe('/GET parcels', () => {
 
 });
  
+ //testing on creating new parcel endpoint
+ describe('/POST newParcel', () => {
+	it('It should create a new parcel', (done) => {
+		const parcel_length = parcel.length;
+
+		chai.request(app)
+		.post('/api/v1/parcels/')
+		.send({
+			'name': 'Tupac',
+			'phone': '0712345678',
+			'quantity': 50,
+			'country': 'DRC'
+		})
+		.end((err, res) => {
+			res.should.have.status(200);
+			expect(parcel_length + 1).to.equal(parcel.length);
+			// res.body.should.be.a('string');
+			done();
+		});
+
+	});
+
+});
