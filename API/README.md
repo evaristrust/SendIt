@@ -11,7 +11,10 @@ First install depedencies:
 Once dependencies are installed, run npm start
 
 # Heroku Application
+** UI
+<a href="https://andela-challenge.herokuapp.com/UI/" target="_blank">https://andela-challenge.herokuapp.com/UI/</a>
 
+**APIs
 <a href="https://andela-challenge-2.herokuapp.com/" target="_blank">https://andela-challenge-2.herokuapp.com/</a>
 
 # End Points
