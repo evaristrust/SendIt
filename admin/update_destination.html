@@ -1,0 +1,71 @@
+<!Doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">	
+	<title> admin : Update Destination</title>
+ 
+</head>
+<body>
+  <nav>
+  <ul>
+
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="index.html">Logout</a></li>
+  </ul>
+  </nav>
+
+
+<h3 class="page_header">Update Order Location</h3>
+
+<h5 class="sub_page_header">Order Details</h5>
+
+<table class="beautiful_table">
+  
+    <tr><td>Ordered By</td><td>Evariste</td></tr>
+
+    <tr><td>Order Id</td><td>XY887-99</td></tr>
+    <tr><td>Order Date</td><td>2018-10-27</td></tr>
+    <tr><td>Sent From</td><td>Rwanda</td></tr>
+    <tr><td>Sent To</td><td>Nigeria</td></tr>
+    <tr><td>Current Country</td><td id="current_destination">Rwanda</td></tr>
+
+</table>
+
+
+
+<form class="beautiful_form">
+<label for="country"> New Destination </label><br>
+  <select id="country">
+      <option value="Afghanistan">Afghanistan</option>
+      
+      <option value="Bahamas">Bahamas</option>
+      
+      <option value="Cambodia">Cambodia</option>
+      
+      <option value="Denmark">Denmark</option>
+     
+      <option value="Ecuador">Ecuador</option>
+     
+      <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+     
+      <option value="Gabon">Gabon</option>
+      
+      <option value="Haiti">Haiti</option>
+     
+      <option value="Iceland">Iceland</option>
+      <option value="Japan">Japan</option>
+      <option value="Nigeria">Nigeria</option>
+
+      <option value="Rwanda">Rwanda</option>
+    </select><br>
+<button type="button" id="change" class="btn-primary" onclick="updateCurrentDestinationCountry()"> Change </button>
+  </form>
+
+
+
+
+<script src="scripts/orders.js"></script>
+</body>
+
+  </html>

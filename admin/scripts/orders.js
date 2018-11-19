@@ -17,3 +17,14 @@ function updateStatus(event,to_status, row_id){
 	var orders = document.getElementById('orders').rows[row_id].cells[8].innerHTML = to_status;
 
 }
+
+function updateCurrentDestinationCountry(){
+	if (confirm("Are you sure you want to update the destination country?") === false){
+		return false;
+	}
+
+	// get the selected country
+    var country = document.getElementById("country").value;
+
+	 document.getElementById("current_destination").innerText = country;
+}
