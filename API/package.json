@@ -1,12 +1,12 @@
 {
-  "name": "my-static-site",
+  "name": "api",
   "version": "1.0.0",
   "description": "This will load any static html site",
   "main": "src/app.js",
   "scripts": {
     "build": "babel src -d dist",
     "test": " nyc mocha --compilers js:babel-core/register --require babel-polyfill --exit",
-    "start": "node src/start.js babel-node --presets env harp app --port $PORT" ,
+    "start": "node src/start.js babel-node --presets env" ,
     "nyc": "nyc npm test",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "gulp build"
@@ -36,7 +36,6 @@
     "chai-http": "^4.2.0",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
-    "http-server": "^0.11.1",
-    "harp": "*"
+    "http-server": "^0.11.1"
   }
 }
