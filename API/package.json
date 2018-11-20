@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d dist",
     "test": " nyc mocha --compilers js:babel-core/register --require babel-polyfill --exit",
-    "start": "node src/start.js babel-node --presets env harp app --port $PORT" ,
+    "start": "node src/start.js babel-node --presets env harp server --port $PORT" ,
     "nyc": "nyc npm test",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "gulp build"
