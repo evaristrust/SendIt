@@ -1,10 +1,10 @@
 import parcel from '../src/api/models/parcel';
 
-var chai = require('chai')
-var expect = chai.expect;
-var should = chai.should();
-var chaiHttp = require("chai-http");
-var app = require('../src/app');
+const chai = require('chai')
+const expect = chai.expect;
+const should = chai.should();
+const chaiHttp = require("chai-http");
+const app = require('../src/app');
 
 chai.use(chaiHttp);
 
@@ -17,7 +17,7 @@ describe('/GET parcels', () => {
 		
 		.end((err, res) => {
 			res.should.have.status(200);
-			expect(res.body.length).to.equal(3);
+			expect(res.body.length).to.equal(parcel.length);
 			res.body.should.be.a('array');
 			done();
 		});
@@ -111,7 +111,7 @@ describe('/GET userParcels', () => {
 			res.should.have.status(200);
 			expect(res.body.length).to.equal(2);
 
-			// check for user id 200
+			// check for user id 200000
 			chai.request(app)
 			.get('/api/v1/users/200000/parcels/')
 			.end((err, res) =>{

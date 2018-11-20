@@ -61,8 +61,8 @@ export default {
         /*
         Show list of parcels
         */
-        res.send(parcel);
-        // res.json({'parcels':parcel});
+        
+        res.json({'parcels':parcel});
 
      },
 
