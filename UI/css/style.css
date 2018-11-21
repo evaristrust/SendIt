@@ -73,8 +73,10 @@ p#greeting {
 	font-size: 16px;
 	font-family: courier;
 	color: #2F4F4F;
-	tex-align: justify;
-	width: 60%;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%
 }
 
 .form-input{
@@ -92,6 +94,7 @@ p#greeting {
 	color: #355681;
 	text-transform: uppercase;
 	border-bottom: 1px solid rgba(53,86,129, 0.3);
+	text-align: center
 }
 
 .sub_page_header {
@@ -114,12 +117,18 @@ form.beautiful_form {
     padding: 25px 15px 25px 10px;
     font: 12px Georgia, "Times New Roman", Times, serif;
     
-    text-shadow: 1px 1px 1px #FFF;
+	text-shadow: 1px 1px 1px #FFF;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%
     
 }
 
 
 form.beautiful_form fieldset legend {
+	text-align: center;
+}
+div.intro {
 	text-align: center;
 }
 
