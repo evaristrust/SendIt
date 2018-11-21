@@ -55,24 +55,16 @@ describe('/PUT cancelParcel', () => {
 		
 
 		chai.request(app)
-		.put('/api/v1/parcels/1/cancel')
+		.put('/api/v1/parcels/0/cancel')
 		
 		.end((err, res) => {
 			res.should.have.status(400);
-
-			// check for parcel id 2
-			chai.request(app)
-			.put('/api/v1/parcels/2/cancel')
-			.end((err, res) =>{
-				res.should.have.status(200);
 			})
 
 			done();
 		});
 
 	});
-
-});
 
 describe('/GET parcelDetail', () => {
 	it('It should return detail of a parcel', (done) => {
@@ -105,11 +97,11 @@ describe('/GET userParcels', () => {
 		
 
 		chai.request(app)
-		.get('/api/v1/users/1/parcels/')
+		.get('/api/v1/users/0/parcels/')
 		
 		.end((err, res) => {
 			res.should.have.status(200);
-			expect(res.body.length).to.equal(2);
+			expect(res.body.length).to.equal(0);
 
 			// check for user id 200000
 			chai.request(app)

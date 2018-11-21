@@ -36,7 +36,7 @@ export default {
             }
          }
 
-            res.status(http_status).send(msg);
+            res.status(http_status).json({message: msg});
          
 
  },
@@ -53,7 +53,7 @@ export default {
 
     const parcels = parcel.filter(p => p.customer_id == user_id);
 
-    res.send(parcels);
+    res.status(200).json(parcels);
     },
 
 
@@ -62,7 +62,7 @@ export default {
         Show list of parcels
         */
         
-        res.json({'parcels':parcel});
+        res.json(parcel);
 
      },
 
@@ -77,7 +77,7 @@ export default {
 
     const parcel_detail = parcel.filter(p => p.id == parcel_id);
 
-    res.send(parcel_detail);
+    res.status(200).json(parcel_detail);
     },
     
     newParcel(req, res, next){
@@ -92,7 +92,7 @@ export default {
         */
 
         const { name, quantity , phone , country } = req.body;
-
+        
         // new parcel id.
         const new_id = parcel.length + 1;
         const order_code = new_id +'UIOO';
@@ -123,9 +123,7 @@ export default {
             status: 'incomplete',
             country: country
         });
+        res.status(200).json(parcel);
 
-        res.send(`The order was created successfully with order code ${order_code}`);
-
-    }   
-
-    }
+    } 
+ }
