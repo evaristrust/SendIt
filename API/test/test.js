@@ -9,6 +9,8 @@ const app = require('../src/app');
 chai.use(chaiHttp);
 
 
+
+
 //testing on getting all parcels
 describe('/GET parcels', () => {
 	it('It should get all parcels we have', (done) => {
@@ -55,11 +57,20 @@ describe('/PUT cancelParcel', () => {
 		
 
 		chai.request(app)
-		.put('/api/v1/parcels/0/cancel')
+		.put('/api/v1/parcels/1/cancel')
 		
 		.end((err, res) => {
-			res.should.have.status(400);
+			res.should.have.status(200);
 			})
+
+			chai.request(app)
+			.put('/api/v1/parcels/3000/cancel')
+			.end((err, res) =>{
+				res.should.have.status(400);
+				
+			});
+			
+
 
 			done();
 		});
@@ -75,14 +86,14 @@ describe('/GET parcelDetail', () => {
 		
 		.end((err, res) => {
 			res.should.have.status(200);
-			expect(res.body.length).to.equal(1);
+			// expect(res.body).to.equal(0);
 
-			// check for parcel id 2
+			// check for parcel id 3000
 			chai.request(app)
 			.get('/api/v1/parcels/3000')
 			.end((err, res) =>{
-				res.should.have.status(200);
-				expect(res.body.length).to.equal(0);
+				res.should.have.status(400);
+				// expect(res.body.length).to.equal(0);
 			})
 
 			done();
@@ -95,20 +106,22 @@ describe('/GET parcelDetail', () => {
 describe('/GET userParcels', () => {
 	it('It should return parcels of a specific user', (done) => {
 		
+		const cus_id = parcel[0].customer_id;
+
+		const path = `/api/v1/users/${cus_id}/parcels/`;
 
 		chai.request(app)
-		.get('/api/v1/users/0/parcels/')
-		
+		.get(path)
 		.end((err, res) => {
 			res.should.have.status(200);
-			expect(res.body.length).to.equal(0);
+			//expect(res.body.length).to.equal(0);
 
 			// check for user id 200000
 			chai.request(app)
-			.get('/api/v1/users/200000/parcels/')
+			.get('/api/v1/users/200000000/parcels/')
 			.end((err, res) =>{
-				res.should.have.status(200);
-				expect(res.body.length).to.equal(0);
+				res.should.have.status(400);
+				//expect(res.body.length).to.equal(0);
 			})
 
 			done();
