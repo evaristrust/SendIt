@@ -53,7 +53,14 @@ export default {
 
     const parcels = parcel.filter(p => p.customer_id == user_id);
 
+    // do we have parcels by the user?
+
+    if(parcels.length === 0 ){
+        res.status(400).json({'msg':'The customer was not found'});
+    }
+    else{
     res.status(200).json(parcels);
+    }
     },
 
 
@@ -62,7 +69,7 @@ export default {
         Show list of parcels
         */
         
-        res.json(parcel);
+        res.status(200).json(parcel);
 
      },
 
@@ -77,7 +84,15 @@ export default {
 
     const parcel_detail = parcel.filter(p => p.id == parcel_id);
 
-    res.status(200).json(parcel_detail);
+    // parcel found?
+
+    if(parcel_detail.length === 0){
+        res.status(400).json({'msg':`There is no parcel with parcel id ${parcel_id}`});
+    }
+    else{
+        res.status(200).json(parcel_detail);
+    }
+    
     },
     
     newParcel(req, res, next){
@@ -91,7 +106,7 @@ export default {
         @input phone: Number. Phone number of the customer making the order
         */
 
-        const { name, quantity , phone , country } = req.body;
+        const { name, quantity , phone , country, product } = req.body;
         
         // new parcel id.
         const new_id = parcel.length + 1;
@@ -119,11 +134,12 @@ export default {
             customer_phone: phone,
             customer_name: name,
             customer_id: customer_id,
+            product: product,
             quantity: quantity,
             status: 'incomplete',
             country: country
         });
-        res.status(200).json(parcel);
+        res.status(200).json(parcel[parcel.length-1]);
 
     } 
  }
