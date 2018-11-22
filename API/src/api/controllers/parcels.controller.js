@@ -106,7 +106,7 @@ export default {
         @input phone: Number. Phone number of the customer making the order
         */
 
-        const { name, quantity , phone , country } = req.body;
+        const { name, quantity , phone , country, product } = req.body;
         
         // new parcel id.
         const new_id = parcel.length + 1;
@@ -134,6 +134,7 @@ export default {
             customer_phone: phone,
             customer_name: name,
             customer_id: customer_id,
+            product: product,
             quantity: quantity,
             status: 'incomplete',
             country: country
