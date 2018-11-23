@@ -4,7 +4,7 @@ Andela Kigali bootcamp challenges
 
 UI: <a href="https://evaristrust.github.io/SendIt/UI/">https://evaristrust.github.io/SendIt/UI/</a>
 
-APIs: <a href="https://andella-challenge-2.herokuapp.com/" target="_blank">https://andella-challenge-2.herokuapp.com/</a>
+APIs: <a href="https://andela-challenge.herokuapp.com/" target="_blank">https://andela-challenge.herokuapp.com/</a>
 
 # End Points
 
